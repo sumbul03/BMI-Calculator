@@ -45,18 +45,16 @@ function measureBMI () {
     bmi = Math.round(bmi * 100) / 100; // Round off 2 decimal places
   
     // (C) Show Results
-    if (bmi < 18.5) {
-      results.innerHTML = bmi + " - Underweight";
-    } else if (bmi < 25) {
-      results.innerHTML = bmi + " - Normal weight";
-    } else if (bmi < 30) {
-      results.innerHTML = bmi + " - Pre-obesity";
-    } else if (bmi < 35) {
-      results.innerHTML = bmi + " - Obesity class I";
-    } else if (bmi < 40) {
-      results.innerHTML = bmi + " - Obesity class II";
-    } else {
-      results.innerHTML = bmi + " - Obesity class III";
+    if (bmi < 18.6) {
+      results.innerHTML = bmi + " - ✖ Oh no, You're underweight!";
+      results.style.color="red";
+    } else if (bmi < 25.9) {
+      results.innerHTML = bmi + " - ✔ Congrats, You’re Healthy!";
+      results.style.color="green";
+    } 
+    else {
+      results.innerHTML = bmi + " - ✖ Oh no, You’re overweight!";
+      results.style.color="red";
     }
     return false;
   }
